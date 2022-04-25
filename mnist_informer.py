@@ -47,7 +47,7 @@ texts = ["Перцептрон - математический аналог не�
          "Наша модель нейронной сети", "График точности", "График функции потерь", "Матрица ошибок"
 
          ]
-file_path = '/sysroot/home/user/Загрузки/PyProject/mnist_streamlit/venv/'
+file_path = 'app/mns_conv/'
 
 for header_name, subheader_name, file_name, text_header, text in zip(header_names, subheader_names, file_names, text_headers, texts):
     # st.subheader(header_name)
@@ -94,10 +94,10 @@ def img_preprocess(img):
 
     # convert n save
     im = Image.fromarray(img_array1)
-    im.save("your_file_image.png")
+    im.save('app/mns_conv/your_file_image.png')
     # image11 = Image.open('/sysroot/home/user/Загрузки/PyProject/mnist_streamlit/your_file_image.png')
-    image11 = Image.open('your_file_image.png')
-    img11 = image11.resize((28, 28), Image.ANTIALIAS)
+    image11 = Image.open('app/mns_conv/your_file_image.png')
+    img11 = image11.resize((28, 28,1), Image.ANTIALIAS)
 
     # convert image to one channel & Numpy array
     img12 = img11.convert("L")
@@ -127,7 +127,7 @@ col21 , col22 = st.columns(2)
 with col21:
     with st.container():
         st.title("Примерно так выглядят цифры из базы")
-        st.image('/sysroot/home/user/Загрузки/PyProject/mnist_streamlit/venv/mnist_example.png')
+        st.image('app/mns_conv/mnist_example.png')
         #run = st.checkbox('Run')
         #FRAME_WINDOW = st.image([])
         #camera = cv2.VideoCapture(0)
@@ -159,7 +159,7 @@ with col22:
 
             mnist_like = img_preprocess(img_array)
 
-            model_2d = load_model('/sysroot/home/user/Загрузки/PyProject/mnist_streamlit/venv/mnist_2d.h5')
+            model_2d = load_model('app/mns_conv/mnist_2d_conv.h5')
 
             #st.write(imgData1)
 
