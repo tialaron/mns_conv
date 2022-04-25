@@ -94,9 +94,9 @@ def img_preprocess(img):
 
     # convert n save
     im = Image.fromarray(img_array1)
-    im.save('app/mns_conv/your_file_image.png')
+    im.save('/app/mns_conv/your_file_image.png')
     # image11 = Image.open('/sysroot/home/user/Загрузки/PyProject/mnist_streamlit/your_file_image.png')
-    image11 = Image.open('app/mns_conv/your_file_image.png')
+    image11 = Image.open('/app/mns_conv/your_file_image.png')
     img11 = image11.resize((28, 28,1), Image.ANTIALIAS)
 
     # convert image to one channel & Numpy array
@@ -127,7 +127,7 @@ col21 , col22 = st.columns(2)
 with col21:
     with st.container():
         st.title("Примерно так выглядят цифры из базы")
-        st.image('app/mns_conv/mnist_example.png')
+        st.image('/app/mns_conv/mnist_example.png')
         #run = st.checkbox('Run')
         #FRAME_WINDOW = st.image([])
         #camera = cv2.VideoCapture(0)
@@ -159,7 +159,7 @@ with col22:
 
             mnist_like = img_preprocess(img_array)
 
-            model_2d = load_model('app/mns_conv/mnist_2d_conv.h5')
+            model_2d = load_model('/app/mns_conv/mnist_2d_conv.h5')
 
             #st.write(imgData1)
 
