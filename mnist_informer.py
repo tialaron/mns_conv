@@ -97,7 +97,7 @@ def img_preprocess(img):
     im.save('/app/mns_conv/your_file_image.png')
     # image11 = Image.open('/sysroot/home/user/Загрузки/PyProject/mnist_streamlit/your_file_image.png')
     image11 = Image.open('/app/mns_conv/your_file_image.png')
-    img11 = image11.resize((1,28, 28), Image.ANTIALIAS)
+    img11 = image11.resize((28, 28), Image.ANTIALIAS)
 
     # convert image to one channel & Numpy array
     img12 = img11.convert("L")
